@@ -195,13 +195,13 @@ pass in callvalue of 1, with calldata size of 8 (0x0000000000000000)
 
 ------------------------
 Puzzle 10
-CODESIZE -> 20
-CALLVALUE -> must be less than 20
+CODESIZE -> 27
+CALLVALUE -> must be less than 27
 SWAP1 [CODESIZE, CALLVALUE]
-GT -> CODESIZE must be less than CALLVALUE
+GT -> CODESIZE must be greater than CALLVALUE ( CODESIZE  > CALLVALUE)
 PUSH1 08
 JUMPI
-pass in callvalue greater than 20
+pass in callvalue less than 27
 ----------------------------------
 CALLDATASIZE -> must divide evenly into 3 i.e 6
 PUSH2 0003
@@ -214,9 +214,12 @@ ISZERO
 [1]
 CALLVALUE -> 9
 PUSH1 0A
-ADD -> callvalue (num < 20) + 10 = 19
+ADD -> callvalue (num < 27) + 10 = 19
 JUMPI
 
+put in 15 as callvalue (15 + 10) = 25 (which is 19 in hex)
 
 Overwhelemed by the theory really want to know everything perfectly but feel like 
 i'm not grasping all of it. Have learned a lot though 
+
+
