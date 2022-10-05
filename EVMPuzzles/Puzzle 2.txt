@@ -18,13 +18,14 @@ stack. CODESIZE - CALLVALUE = 06.CALLVALUE is the value in wei that we are passi
 CODESIZE is the bytesize of the code itself
 
 CODESIZE = 10 (10 instructions) | 10 - 4  = 6
-thus, CALLVALUE should be 3 if we expect to halt execution cleanly.
+thus, CALLVALUE should be 4 if we expect to halt execution cleanly.
 
 
 Instructions and stack after instruction has been executed
-00      34      CALLVALUE -> [04]
-01      38      CODESIZE -> [0A]
-02      03      SUB -> [06]
+
+00      34      CALLVALUE -> [4]
+01      38      CODESIZE -> [a]
+02      03      SUB -> [6]
 03      56      JUMP -> []
 06      5B      JUMPDEST -> []
 07      00      STOP

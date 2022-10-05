@@ -25,6 +25,8 @@ between whatever CALLVALUE is passed in multiplied against itself compared again
 The aim is to produce a CALLVALUE that when multiplied against itself will be equivalent to the
 value 256. sqrt(256) = 16 (16 * 16 = 256). 
 
+Instruction's and stack after instruction is ran
+
 00      34          CALLVALUE -> [10]
 01      80          DUP1 -> [10, 10]
 02      02          MUL -> [100]

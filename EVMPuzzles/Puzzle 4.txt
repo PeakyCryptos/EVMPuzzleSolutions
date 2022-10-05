@@ -37,6 +37,7 @@ we must convert this back to base 10 which is 6.
  
 
 Instructions and stack after instruction has been executed
+
 00      34      CALLVALUE -> [6]
 01      38      CODESIZE -> [C, 6]
 02      18      XOR -> [a]

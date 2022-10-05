@@ -11,7 +11,8 @@ is the CALLDATASIZE. CALLDATA is passed in as hex, and each 2 digits represents 
 Thus, we can pass in 00000000 (4 bytes) 
 
 Instructions and stack after instruction has been executed
-00      36      CALLDATASIZE -> [04]
+
+00      36      CALLDATASIZE -> [4]
 01      56      JUMP -> []
 04      5B      JUMPDEST -> []
 05      00      STOP
