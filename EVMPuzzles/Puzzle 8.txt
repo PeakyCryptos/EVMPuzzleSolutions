@@ -22,4 +22,26 @@
 1B      5B        JUMPDEST
 1C      00        STOP
 
+We can see here that JUMPI has a 1B that is pushed to the stack before it which corresponds 
+to the location of JUMPDEST. The value porition that signifies whether the jump should occur
+or not, has an equality comparison before it which will check if the previous 2 items pushed
+to the stack are equivalent.
+
+In this case those 2 items are a 0 (which was pushed via a PUSH1) and the outcome
+of the CALL opcode.  
+
+CALL
+Stack input
+gas: amount of gas to send to the sub context to execute. The gas that is not used by the sub context is returned to this one.
+address: the account which context to execute.
+value: value in wei to send to the account.
+argsOffset: byte offset in the memory in bytes, the calldata of the sub context.
+argsSize: byte size to copy (size of the calldata).
+retOffset: byte offset in the memory in bytes, where to store the return data of the sub context.
+retSize: byte size to copy (size of the return data).
+
+The input into the call opcode will look as follows: 
+[GAS, ADDRESS (returned from CREATE step), 
+
+
 Instruction's and stack after instruction is ran
