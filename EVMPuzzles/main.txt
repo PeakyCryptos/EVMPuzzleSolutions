@@ -1,0 +1,3 @@
+If there is an opcode that has already been mentioned in previous puzzles
+I do not explain as indepth. If you are confused as to what a specific code is doing
+see the previous puzzles to get a better understanding of what this instruciton is does.

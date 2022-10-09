@@ -1,0 +1,35 @@
+00      38          CODESIZE
+01      34          CALLVALUE
+02      90          SWAP1
+03      11          GT
+04      6008        PUSH1 08
+06      57          JUMPI
+07      FD          REVERT
+08      5B          JUMPDEST
+09      36          CALLDATASIZE
+0A      610003      PUSH2 0003
+0D      90          SWAP1
+0E      06          MOD
+0F      15          ISZERO
+10      34          CALLVALUE
+11      600A        PUSH1 0A
+13      01          ADD
+14      57          JUMPI
+15      FD          REVERT
+16      FD          REVERT
+17      FD          REVERT
+18      FD          REVERT
+19      5B          JUMPDEST
+1A      00          STOP
+
+As saw in the previous puzzle this one also contains two JUMPI instructions. 
+
+Taking a look at the second one we can see the jump location is not a hardcoded instruction.
+Instead this is the outcome of ADD operation that performs addition on the two top most
+items of the stack. 0A(10) is added to CALLVALUE. If this value results in 19, we reach
+the JUMPDEST instruction that will allow this program to execute cleanly.
+
+ 
+
+Instruction's and stack after instruction is ran:
+
