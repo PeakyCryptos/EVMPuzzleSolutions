@@ -1,0 +1,22 @@
+00      30        ADDRESS
+01      31        BALANCE
+02      36        CALLDATASIZE
+03      6000      PUSH1 00
+05      6000      PUSH1 00
+07      37        CALLDATACOPY
+08      36        CALLDATASIZE
+09      6000      PUSH1 00
+0B      30        ADDRESS
+0C      31        BALANCE
+0D      F0        CREATE
+0E      31        BALANCE
+0F      90        SWAP1
+10      04        DIV
+11      6002      PUSH1 02
+13      14        EQ
+14      6018      PUSH1 18
+16      57        JUMPI
+17      FD        REVERT
+18      5B        JUMPDEST
+19      00        STOP
+
