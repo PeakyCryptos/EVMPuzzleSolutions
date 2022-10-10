@@ -20,3 +20,7 @@
 18      5B        JUMPDEST
 19      00        STOP
 
+This contract balance has to be 2 and the create contract should be 1
+As when the DIV operation is done it divides Balance of this / balance of create
+
+construct contract that takes 2 ether and keeps 1 
