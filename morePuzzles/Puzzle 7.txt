@@ -1,0 +1,27 @@
+Instruction set and stack after instruction is ran:
+00      5A        GAS
+01      34        CALLVALUE
+02      5B        JUMPDEST
+03      6001      PUSH1 01
+05      90        SWAP1
+06      03        SUB
+07      80        DUP1
+08      6000      PUSH1 00
+0A      14        EQ
+0B      6011      PUSH1 11
+0D      57        JUMPI
+0E      6002      PUSH1 02
+10      56        JUMP
+11      5B        JUMPDEST
+12      5A        GAS
+13      90        SWAP1
+14      91        SWAP2
+15      03        SUB
+16      60A6      PUSH1 A6
+18      14        EQ
+19      601D      PUSH1 1D
+1B      57        JUMPI
+1C      FD        REVERT
+1D      5B        JUMPDEST
+1E      00        STOP
+
