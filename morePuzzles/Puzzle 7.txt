@@ -62,7 +62,19 @@ Thus, our mission is to pass in a sufficient CALLVALUE such that it invokes a lo
 that remaining gas beginning - remaining gas after = 166.
 281474976689653 
 
-CALLVALUE: 2 minimum, JUMPDEST: 1 minimum, PUSH1: 3, SWAP1: 3, SUB: 3, DUP1: 3, EQ: 3 	      
+CALLVALUE: 2 , JUMPDEST: 1, PUSH1: 3, SWAP1: 3, SUB: 3, DUP1: 3, EQ: 3 	      
 JUMPI: 10, GAS: 2
 
-First loop cost:  
+Initital run Gas cost (before loop is entered): 4 (GAS + CALLVALUE) 
+
+Regular Loop Gas cost: 43 
+
+Final Loop Gas cost: 33 (1 loop)
+
+Amount of regular loops = (166 - 33 - 4) / 43 = 3
+
+CALLVALUE = # of regular loops + Final Loop
+CALLVALUE = 3 + 1 = 4
+
+ 
+ 
