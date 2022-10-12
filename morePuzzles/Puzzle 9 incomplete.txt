@@ -1,0 +1,41 @@
+MSTORE starting will store at memory offset 0
+a 32 byte value, in this case the CALLVALUE that you pass in.
+
+SHA3 takes 2 inputs
+Stack input
+offset: byte offset in the memory.
+size: byte size to read in the memory.
+
+[00, 20]
+
+Stack output
+hash: Keccak-256 hash of the given data in memory.
+
+produces 20 byte size Keccak-256 hash starting at 0 in memory
+
+SHR
+Stack input
+shift: number of bits to shift to the right.
+value: 32 bytes to shift.
+
+Stack output
+value >> shift: the shifted value. If shift is bigger than 255, returns 0.
+
+Whatever CALLVALUE we pass in will be turned into a 20 byte SHA3 hash,
+and then shifted right by F8(248), if this is equal to A8(168) we solve this puzzle.
+
+
+168 in binary = 10101000
+
+
+if x >> 248 = 168 then we must do the reverse to find x.
+x is the decimal value of the hash.
+
+168 << 248 = 75988558561988753246718458911951439528708427436826620150894039505192991326208
+Which is A800000000000000000000000000000000000000000000000000000000000000  
+
+Have to pass in a CALLVALUE such that when turned into a SHA3 hash
+equals A800000000000000000000000000000000000000000000000000000000000000 
+
+
+
