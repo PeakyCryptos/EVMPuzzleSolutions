@@ -20,3 +20,24 @@
 [5c]	REVERT	
 [5d]	JUMPDEST	
 [5e]	STOP
+
+for the JUMPI to have a valid value portion the outcome of the EQ operation
+must be 1. For this to happen abababababababababababababababababababababababababababababababab
+must be whats on the stack previously as we do an equality operation with it.
+
+There 2 main operations here that rely on a 64 byte value you pass in as CALLDATA.
+The first 32 bytes are AND'd with 
+f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0
+
+The next 32 bytes are OR'd with the outcome of the AND operation from previous. 
+
+Thus if our outcome is to produce abababababababababababababababababababababababababababababababab
+In the first step we can pass in this value itself, the outcome will be 
+a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
+As anything AND'd with 0, produces a 0.
+
+Next when we OR this value with 
+abababababababababababababababababababababababababababababababab
+we get the output we desire of 
+abababababababababababababababababababababababababababababababab
+Why this is the case is because anything OR'd with a 1 is a 1.
