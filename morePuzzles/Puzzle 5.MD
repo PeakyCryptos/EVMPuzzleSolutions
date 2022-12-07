@@ -1,3 +1,4 @@
+```
 00      6020      PUSH1 20
 02      36        CALLDATASIZE
 03      11        GT
@@ -19,6 +20,7 @@
 18      FD        REVERT
 19      5B        JUMPDEST
 1A      00        STOP
+```
 
 
 CALLDATASIZE must be greater than 20(32 in decimal) to pass first JUMPI.

@@ -1,3 +1,4 @@
+```
 00      34          CALLVALUE
 01      80          DUP1
 02      02          MUL
@@ -11,6 +12,7 @@
 0D      00          STOP
 0E      FD          REVERT
 0F      FD          REVERT
+```
 
 In this puzzle we have a JUMPI which takes 2 parameters off the stack. The first being 
 the byte offset in code where JUMPDEST is located, and a value. If this value is 0
@@ -27,6 +29,7 @@ value 256. sqrt(256) = 16 (16 * 16 = 256).
 
 Instruction's and stack after instruction is ran
 
+```
 00      34          CALLVALUE -> [10]
 01      80          DUP1 -> [10, 10]
 02      02          MUL -> [100]
@@ -36,5 +39,4 @@ Instruction's and stack after instruction is ran
 09      57          JUMPI -> []
 0C      5B          JUMPDEST -> []
 0D      00          STOP
-
-    
+```

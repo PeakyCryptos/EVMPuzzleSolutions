@@ -1,3 +1,4 @@
+```
 [00]	PUSH1	20
 [02]	PUSH1	00
 [04]	PUSH1	00
@@ -20,6 +21,7 @@
 [5c]	REVERT	
 [5d]	JUMPDEST	
 [5e]	STOP
+```
 
 for the JUMPI to have a valid value portion the outcome of the EQ operation
 must be 1. For this to happen abababababababababababababababababababababababababababababababab

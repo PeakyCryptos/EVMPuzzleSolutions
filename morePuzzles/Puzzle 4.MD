@@ -1,3 +1,4 @@
+```
 00      30        ADDRESS
 01      31        BALANCE
 02      36        CALLDATASIZE
@@ -19,6 +20,7 @@
 17      FD        REVERT
 18      5B        JUMPDEST
 19      00        STOP
+```
 
 This contract balance can be 2 and the create contract should be 1
 As when the DIV operation is done it divides Balance of this / balance of create
@@ -38,14 +40,17 @@ contract that creates a contract
 passes 2 wei to first contract, then 1 wei to the second contract
 
 second contract code: 60016000F3 -> When called just halts execution
+```
 [00]	PUSH1	01
 [02]	PUSH1	00
 [04]	RETURN
+```
 --------------------------------------
 When called halts execution.
 Deploys another contract in initalization phase, passing in 1 wei value.
 
 first contract code: 6460016000F36000526005601B6001F0303160016000F3 
+```
 [00]	PUSH5	60016000F3
 [06]	PUSH1	00
 [08]	MSTORE	
@@ -58,7 +63,4 @@ first contract code: 6460016000F36000526005601B6001F0303160016000F3
 [12]	PUSH1	01
 [14]	PUSH1	00
 [16]	RETURN	
-
-
-
-
+```

@@ -1,3 +1,4 @@
+```
 00      36        CALLDATASIZE
 01      6000      PUSH1 00
 03      6000      PUSH1 00
@@ -24,12 +25,14 @@
 1E      FE        INVALID
 1F      5B        JUMPDEST
 20      00        STOP
+```
 
 New instruction encountered is RETURNDATASIZE which pushes to stack, the size of return data
 of last execution context from a CALL, CALLCODE, DELEGATECALL or STATICCALL.
 
 In this case we create a contract which returns data of 10 byte size when called.
 
+```
 [00]	PUSH1	10
 [02]	PUSH1	0C
 [04]	PUSH1	00
@@ -43,5 +46,6 @@ In this case we create a contract which returns data of 10 byte size when called
 [1b]	RETURN	
 
 6010600C60003960106000F36900000000000000000000600A6000F3
+```
 
 This contract above will return the data of 00000000000000000000600, which is 10 bytes.

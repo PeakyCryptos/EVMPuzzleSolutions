@@ -1,3 +1,4 @@
+```
 00      36        CALLDATASIZE
 01      6000      PUSH1 00
 03      80        DUP1
@@ -21,6 +22,7 @@
 1A      FD        REVERT
 1B      5B        JUMPDEST
 1C      00        STOP
+```
 
 We can see here that JUMPI has a 1B that is pushed to the stack before it which corresponds 
 to the location of JUMPDEST. The value porition that signifies whether the jump should occur
@@ -55,6 +57,7 @@ Why this is the case is because as we mentioned earlier an equivalency check mus
 The number pushed to the stack to compare equivalency against is 0.
 
 Deployment code for a contract that returns a revert:
+```
 PUSH1 FD
 PUSH1 00
 MSTORE8
@@ -63,12 +66,14 @@ PUSH1 00
 RETURN
  
 60FD60005360016000F3
+```
 
 To pass this puzzle we send this byte code in as call data. As the CALLDATACOPY operation
 copies this code into memory and also uses the size of whatever bytecode you define to
 prime the parameters for the CREATE instruction. 
 
 Instruction's and stack after instruction is ran:
+```
 00      36        CALLDATASIZE -> [a]
 01      6000      PUSH1 00 -> [0, a]
 03      80        DUP1 -> [0, 0, a]
@@ -91,4 +96,4 @@ Instruction's and stack after instruction is ran:
 19      57        JUMPI -> []
 1B      5B        JUMPDEST -> []
 1C      00        STOP
-
+```

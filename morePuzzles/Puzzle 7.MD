@@ -1,4 +1,5 @@
 Instruction set and stack after instruction is ran:
+```
 00      5A        GAS 
 01      34        CALLVALUE 
 02      5B        JUMPDEST 
@@ -24,6 +25,7 @@ Instruction set and stack after instruction is ran:
 1C      FD        REVERT
 1D      5B        JUMPDEST
 1E      00        STOP
+```
 
 In this puzzle we can see that for the first JUMPI to have a valid value porition(1)
 CALLVALUE - 1 must be equal to 0. 
@@ -34,6 +36,7 @@ that when the program loops back to the second instruction it carries over the p
 result of the subtraction operation
 
 i.e if we push a 3 as CALLVALUE it would look like this:
+```
 00      5A        GAS -> [GAS]
 01      34        CALLVALUE -> [3, GAS]
 02      5B        JUMPDEST -> [3, GAS]
@@ -47,6 +50,7 @@ i.e if we push a 3 as CALLVALUE it would look like this:
 0D      57        JUMPI -> [2, GAS]
 0E      6002      PUSH1 02 -> [2, 2, GAS]
 10      56        JUMP -> [2, GAS] (Jumps back to 02 in instruction with this stack)
+```
 
 As you can see it will continue looping in this manner until either the remaining gas runs out,
 or the JUMPI has a satisfied value porition. I.e if we pass in a CALLVALUE of 3 then 

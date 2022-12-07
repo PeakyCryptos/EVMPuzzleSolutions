@@ -1,3 +1,4 @@
+```
 00      36        CALLDATASIZE
 01      6003      PUSH1 03
 03      10        LT
@@ -16,6 +17,7 @@
 13      FD        REVERT
 14      5B        JUMPDEST
 15      00        STOP
+```
 
 In this puzzle we have 2 JUMPI instruction we must traverse to halt execution cleanly.
 
@@ -44,6 +46,7 @@ a call data of: 0x00000000
 CALLVALUE: 2     
 
 Instruction's and stack after instruction is ran:
+```
 00      36        CALLDATASIZE -> [4]
 01      6003      PUSH1 03 -> [3, 4]
 03      10        LT -> [1]
@@ -59,4 +62,4 @@ Instruction's and stack after instruction is ran:
 12      57        JUMPI -> []
 14      5B        JUMPDEST -> []
 15      00        STOP
-
+```

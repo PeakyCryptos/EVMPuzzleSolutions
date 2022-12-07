@@ -1,3 +1,4 @@
+```
 00      36        CALLDATASIZE
 01      6000      PUSH1 00
 03      80        DUP1
@@ -14,6 +15,7 @@
 12      FD        REVERT
 13      5B        JUMPDEST
 14      00        STOP
+```
 
 In this puzzle we can see the JUMPI is primed with the location of 13 which points to the 
 JUMPDEST that will allow this program to exit cleanly. The value portion of the JUMPI is 
@@ -75,6 +77,7 @@ Next we must also push to the stack the neccessary inputs for return. 0 and 1 fo
 offset in memory to return (execution runtime code) and the byte size to copy 1.
 
 This will give us the instruction set of:
+```
 3A
 PUSH 01
 PUSH 00
@@ -84,9 +87,11 @@ PUSH 01
 PUSH 00
 RETURN
 
-3A6001600060003960016000F3      
+3A6001600060003960016000F3
+```      
 
 Instruction's and stack after instruction is ran
+```
 00      36        CALLDATASIZE -> [d]
 01      6000      PUSH1 00 -> [0, d]
 03      80        DUP1 -> [0, 0, d]
@@ -102,3 +107,4 @@ Instruction's and stack after instruction is ran
 11      57        JUMPI -> []
 13      5B        JUMPDEST -> []
 14      00        STOP
+```

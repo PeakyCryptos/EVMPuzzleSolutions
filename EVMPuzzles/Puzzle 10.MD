@@ -1,3 +1,4 @@
+```
 00      38          CODESIZE
 01      34          CALLVALUE
 02      90          SWAP1
@@ -21,6 +22,7 @@
 18      FD          REVERT
 19      5B          JUMPDEST
 1A      00          STOP
+```
 
 As seen in the previous puzzle, this one also contains two JUMPI instructions. 
 
@@ -65,6 +67,7 @@ CALLVALUE: 15
 CALLADATASIZE: any multiple of 3 (I choose just 3) 
 
 Instruction's and stack after instruction is ran:
+```
 00      38          CODESIZE -> [1b]
 01      34          CALLVALUE -> [f, 1b]
 02      90          SWAP1 -> [1b, f]
@@ -83,3 +86,4 @@ Instruction's and stack after instruction is ran:
 14      57          JUMPI -> []
 19      5B          JUMPDEST -> []
 1A      00          STOP
+```

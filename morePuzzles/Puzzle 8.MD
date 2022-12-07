@@ -1,3 +1,4 @@
+```
 00      34        CALLVALUE
 01      15        ISZERO
 02      19        NOT
@@ -35,6 +36,7 @@
 2E      FD        REVERT
 2F      5B        JUMPDEST
 30      00        STOP
+```
 
 construct a contract that when called will not accept ether. 
 Create an invalid contract so when called still returns true(1)?

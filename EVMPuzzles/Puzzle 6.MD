@@ -1,4 +1,4 @@
-
+```
 00      6000      PUSH1 00
 02      35        CALLDATALOAD
 03      56        JUMP
@@ -10,6 +10,7 @@
 09      FD        REVERT
 0A      5B        JUMPDEST
 0B      00        STOP
+```
 
 CALLDATALOAD
 
@@ -29,8 +30,10 @@ onto the stack.
 
 Instruction's and stack after instruction is ran
 
+```
 00      6000      PUSH1 00 -> [0]
 02      35        CALLDATALOAD -> [000000000000000000000000000000000000000000000000000000000000000a]
 03      56        JUMP -> []
 0A      5B        JUMPDEST -> []
 0B      00        STOP
+```

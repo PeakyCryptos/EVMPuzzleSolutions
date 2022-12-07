@@ -1,3 +1,4 @@
+```
 00      34      CALLVALUE
 01      38      CODESIZE
 02      03      SUB
@@ -8,6 +9,7 @@
 07      00      STOP
 08      FD      REVERT
 09      FD      REVERT
+```
 
 We can see there is one JUMP instruction here that will lead to a clean halt (STOP).
 This JUMP instruction would need to take the value of 06 to reach the JUMPDEST that will allow 
@@ -23,9 +25,11 @@ thus, CALLVALUE should be 4 if we expect to halt execution cleanly.
 
 Instructions and stack after instruction has been executed
 
+```
 00      34      CALLVALUE -> [4]
 01      38      CODESIZE -> [a]
 02      03      SUB -> [6]
 03      56      JUMP -> []
 06      5B      JUMPDEST -> []
 07      00      STOP
+```

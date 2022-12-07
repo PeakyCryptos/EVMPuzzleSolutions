@@ -1,3 +1,4 @@
+```
 00      36        CALLDATASIZE
 01      6000      PUSH1 00
 03      6000      PUSH1 00
@@ -22,6 +23,7 @@
 1D      FE        INVALID
 1E      5B        JUMPDEST
 1F      00        STOP
+```
 
 New instructions seen are DELEGATECALL and SLOAD.
 
@@ -37,15 +39,18 @@ and the value in storage slot 5.
 We must make use of the operation SSTORE which allows us to specifically write 
 a value to a specified storage slot [key, value].
 
+```
 [00]	PUSH1	AA
 [02]	PUSH1	00
 [04]	SSTORE
 
 60AA600555
+```
 
 Define constructor that will deploy this contract:
 6005600C60003960056000F360AA600555
 
+```
 [00]	PUSH1	05
 [02]	PUSH1	0C
 [04]	PUSH1	00
@@ -56,3 +61,4 @@ Define constructor that will deploy this contract:
 [0c]	PUSH1	AA
 [0e]	PUSH1	05
 [10]	SSTORE
+```
